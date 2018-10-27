@@ -15,5 +15,6 @@
 	<classpathentry kind="lib" path="C:/Users/MTO/Downloads/Selenium/lib/poi-ooxml-3.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/MTO/Downloads/Selenium/lib/poi-ooxml-schemas-3.17.jar"/>
 	<classpathentry kind="lib" path="C:/Users/MTO/Downloads/Selenium/lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/MTO/Downloads/Selenium/lib/jxl-2.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
