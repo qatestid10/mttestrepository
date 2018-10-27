@@ -1,5 +1,7 @@
 package test;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,13 +12,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
 public class Mainclass {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BiffException, IOException {
 
 		
-		System.out.println("Testing");
+		System.out.println("Testingyhyhy");		
 		
+	   	FileInputStream fs = new FileInputStream("C:\\Users\\MTO\\Downloads\\Selenium\\lib\\Workbook2.xls"); 
+		Workbook wb = Workbook.getWorkbook(fs);
+		Sheet AddressSheet = wb.getSheet("User_Login"); 		
+	    
 		
 		 DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a");
 		    Date date = new Date();
@@ -44,11 +54,13 @@ public class Mainclass {
 		
 		WebElement username;
 		username = driver.findElement(By.id("input-email"));
-		 username.sendKeys("mytc5@gmail.com");
+		// username.sendKeys("mytc5@gmail.com");
+		 username.sendKeys(AddressSheet.getCell(0, 1).getContents());
 				   
 		WebElement Password;
 		Password = driver.findElement(By.id("input-password"));
-		Password.sendKeys("123456789");
+		//Password.sendKeys("123456789");
+		Password.sendKeys(AddressSheet.getCell(1, 1).getContents());
 				   
 		WebElement loginButton;  
 		loginButton = driver.findElement(By.xpath("//*[@id=\"content\"]/div/div[2]/div/form/input"));
